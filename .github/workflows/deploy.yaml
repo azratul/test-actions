@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: ghcr.io/$GITHUB_ACTOR/test-actions
+  IMAGE_NAME: ghcr.io/azratul/test-actions
   CONTAINER_NAME: demo-go
 
 jobs:
