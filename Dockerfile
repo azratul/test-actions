@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine as build
+FROM golang:1.22-alpine AS build
 WORKDIR /app
 COPY . .
 RUN go mod init example.com/demo && go mod tidy

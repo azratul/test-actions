@@ -26,7 +26,7 @@ jobs:
       - name: Construir imagen Docker multi-arch (arm64)
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/arm64,linux/arm/v7 -t $IMAGE_NAME:latest --push .
+          docker buildx build --platform linux/arm64,linux/arm/v7 -t $IMAGE_NAME/$CONTAINER_NAME:latest --push .
 
   deploy:
     runs-on: self-hosted
