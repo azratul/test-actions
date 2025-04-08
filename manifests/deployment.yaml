@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-jperez20021
+  name: test-actions
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-jperez20021
+      app: test-actions
   template:
     metadata:
       labels:
-        app: demo-jperez20021
+        app: test-actions
     spec:
       containers:
-        - name: demo-jperez20021
-          image: ghcr.io/azratul/demo-jperez20021:latest
+        - name: test-actions
+          image: ghcr.io/azratul/test-actions:latest
           ports:
             - containerPort: 5000
           env:

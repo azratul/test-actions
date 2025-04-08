@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-jperez20021
+  name: test-actions
 spec:
   selector:
-    app: demo-jperez20021
+    app: test-actions
   ports:
     - protocol: TCP
       port: 80
