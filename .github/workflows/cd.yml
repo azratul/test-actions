@@ -24,7 +24,7 @@ jobs:
 
       - name: apply-kubernetes
         run: | 
-          DEPLOY_NAME=$(yq '.metadata.name' manifests/deployment.yaml)
+          DEPLOY_NAME=$(yq -r '.metadata.name' manifests/deployment.yaml)
           kubectl apply -f manifests/deployment.yaml
           kubectl apply -f manifests/service.yaml
           kubectl apply -f manifests/ingress.yaml
