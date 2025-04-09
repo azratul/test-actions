@@ -7,8 +7,11 @@ import logging
 fluent_host = os.getenv("FLUENTD_HOST", "localhost")
 fluent_port = int(os.getenv("FLUENTD_PORT", 24224))
 
-fluent_handler = handler.FluentHandler('flask-rabbit', host=fluent_host, port=fluent_port)
+app_name = os.getenv("APP_NAME", "flask-rabbit")
+
+fluent_handler = handler.FluentHandler(app_name, host=fluent_host, port=fluent_port)
 formatter = handler.FluentRecordFormatter({
+    'job': app_name,
     'host': '%(hostname)s',
     'where': '%(module)s.%(funcName)s',
     'message': '%(message)s'
